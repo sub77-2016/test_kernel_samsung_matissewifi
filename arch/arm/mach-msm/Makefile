@@ -493,3 +493,4 @@ endif
 obj-$(CONFIG_GSM_MODEM_SPRD6500) += board-sprd6500-spi.o board-sprd6500-modems.o
 
 obj-$(CONFIG_HAS_MACH_MEMUTILS) += memutils/
+obj-$(CONFIG_MSM_CPUFREQ_LIMITER) += cpufreq_limit.o
