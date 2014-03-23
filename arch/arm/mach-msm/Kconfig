@@ -288,6 +288,7 @@ config ARCH_MSM8974
 	select KRAIT_REGULATOR
 	select ENABLE_VMALLOC_SAVINGS
 	select MSM_AVTIMER
+	select HAS_MACH_MEMUTILS
 
 config ARCH_MSM8974PRO
 	bool "MSM8974PRO"
@@ -3998,5 +3999,11 @@ config SIMPLE_PLUG_STATS
 	help
 	  This adds a slight CPU cost and therefore is disabled
 	  by default.
+
+config HAS_MACH_MEMUTILS
+	default n
+	bool "Motorola MSM memcpy enhancements"
+	help
+	Faster memcpy performance for Krait
 
 endif
