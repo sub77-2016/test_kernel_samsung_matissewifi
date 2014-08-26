@@ -167,7 +167,7 @@ static int mhl_clear_reg(struct i2c_client *client, unsigned int offset,
 			u8 mask)
 {
 	int ret;
-	u8 value;
+	u8 value = 0;
 
 	ret = mhl_read_byte_reg(client, offset, &value);
 	if (unlikely(ret < 0)) {
@@ -189,7 +189,7 @@ static int mhl_set_reg(struct i2c_client *client, unsigned int offset,
 {
 	int ret;
 
-	u8 value;
+	u8 value = 0;
 	ret = mhl_read_byte_reg(client, offset, &value);
 	if (unlikely(ret < 0)) {
 		pr_err("[ERROR] sii8240: %s():%d offset:0x%X ret:%d\n",
@@ -413,7 +413,7 @@ static int tmds_control(struct sii8240_data *sii8240, bool tmds_on)
 {
 	int ret;
 #ifdef SFEATURE_HDCP_SUPPORT
-	u8 value, value2;
+	u8 value = 0, value2 = 0;
 #endif
 	struct i2c_client *tpi = sii8240->pdata->tpi_client;
 	struct i2c_client *hdmi = sii8240->pdata->hdmi_client;
@@ -4184,7 +4184,7 @@ static int sii8240_audio_video_intr_control(struct sii8240_data *sii8240)
 	u8 upstatus, ceainfo;
 	u8 checksum = 0;
 #ifdef SFEATURE_HDCP_SUPPORT
-	u8 value;
+	u8 value = 0;
 	struct i2c_client *tpi = sii8240->pdata->tpi_client;
 #endif
 	struct i2c_client *tmds = sii8240->pdata->tmds_client;
@@ -4372,7 +4372,7 @@ static irqreturn_t sii8240_irq_thread(int irq, void *data)
 	struct i2c_client *tmds = sii8240->pdata->tmds_client;
 	struct i2c_client *hdmi = sii8240->pdata->hdmi_client;
 	u8 intr1 = 0, intr1_en, int1_status, int2_status, cbus_con_st;
-	u8 value;
+	u8 value = 0;
 	u8 cbus1, cbus2, cbus3, cbus4;
 	int ret;
 	bool clock_stable = false;
