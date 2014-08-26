@@ -257,10 +257,10 @@ static int lightsensor_onoff(u8 onoff, struct gp2a_data *data)
 int gp2a_get_lux(struct gp2a_data *data)
 {
 	unsigned char get_data[4] = { 0, };
-	int d0_raw_data;
-	int d1_raw_data;
-	int d0_data;
-	int d1_data;
+	int d0_raw_data = 0;
+	int d1_raw_data = 0;
+	int d0_data = 0;
+	int d1_data = 0;
 	int lx = 0;
 	u8 value;
 	int light_alpha = 0;
@@ -572,8 +572,8 @@ static ssize_t gp2a_light_raw_data_show(struct device *dev,
 	struct gp2a_data *data = dev_get_drvdata(dev);
 
 	unsigned char get_data[4] = { 0, };
-	int d0_raw_data;
-	int d1_raw_data;
+	int d0_raw_data = 0;
+	int d1_raw_data = 0;
 	int ret = 0;
 
 	if (bShutdown == true){
@@ -889,7 +889,7 @@ static int gp2a_prox_do_calibrate(struct gp2a_data  *data,
 			bool do_calib, bool thresh_set)
 {
 	struct file *cal_filp;
-	int err;
+	int err = 0;
 	int xtalk_avg = 0;
 	int offset_change = 0;
 	uint16_t thrd = 0;
@@ -980,7 +980,7 @@ static ssize_t gp2a_prox_cal_show(struct device *dev,
 				struct device_attribute *attr, char *buf)
 {
 	struct gp2a_data *data = dev_get_drvdata(dev);
-	int thresh_hi, thresh_low;
+	int thresh_hi = 0, thresh_low = 0;
 	unsigned char get_D2_data[4];
 
 	if (bShutdown == true){
@@ -1005,7 +1005,7 @@ static ssize_t gp2a_prox_cal_store(struct device *dev,
 {
 	struct gp2a_data *data = dev_get_drvdata(dev);
 	bool do_calib;
-	int err;
+	int err = 0;
 
 	if (bShutdown == true){
 		pr_err("%s bShutdown true.", __func__);
@@ -1139,7 +1139,7 @@ done:
 static int gp2a_prox_manual_offset(struct gp2a_data  *data, u8 change_on)
 {
 	struct file *cal_filp;
-	int err;
+	int err = 0;
 	int16_t thrd;
 	u8 reg;
 	mm_segment_t old_fs;
@@ -1195,7 +1195,7 @@ static ssize_t gp2a_prox_cal2_store(struct device *dev,
 {
 	struct gp2a_data *data = dev_get_drvdata(dev);
 	u8 change_on;
-	int err;
+	int err = 0;
 
 	if (bShutdown == true){
 		pr_err("%s bShutdown true.", __func__);
