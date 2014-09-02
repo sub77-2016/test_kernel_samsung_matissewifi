@@ -1065,7 +1065,7 @@ INT32 ffsSetAttr(struct inode *inode, UINT32 attr)
 
 INT32 ffsGetStat(struct inode *inode, DIR_ENTRY_T *info)
 {
-	UINT32 sector;
+	UINT32 sector = 0;
 	INT32 count;
 	CHAIN_T dir;
 	UNI_NAME_T uni_name;
@@ -1185,7 +1185,7 @@ INT32 ffsGetStat(struct inode *inode, DIR_ENTRY_T *info)
 
 INT32 ffsSetStat(struct inode *inode, DIR_ENTRY_T *info)
 {
-	UINT32 sector;
+	UINT32 sector = 0;
 	TIMESTAMP_T tm;
 	DENTRY_T *ep, *ep2;
 	ENTRY_SET_CACHE_T *es=NULL;
@@ -1906,7 +1906,7 @@ void exfat_free_cluster(struct super_block *sb, CHAIN_T *p_chain, INT32 do_relse
 	UINT32 clu;
 	FS_INFO_T *p_fs = &(EXFAT_SB(sb)->fs_info);
 	INT32 i;
-	UINT32 sector;
+	UINT32 sector = 0;
 
 	if ((p_chain->dir == CLUSTER_32(0)) || (p_chain->dir == CLUSTER_32(~0)))
 		return;
@@ -2144,7 +2144,7 @@ void free_alloc_bitmap(struct super_block *sb)
 INT32 set_alloc_bitmap(struct super_block *sb, UINT32 clu)
 {
 	INT32 i, b;
-	UINT32 sector;
+	UINT32 sector = 0;
 	FS_INFO_T *p_fs = &(EXFAT_SB(sb)->fs_info);
 	BD_INFO_T *p_bd = &(EXFAT_SB(sb)->bd_info);
 
@@ -2161,7 +2161,7 @@ INT32 set_alloc_bitmap(struct super_block *sb, UINT32 clu)
 INT32 clr_alloc_bitmap(struct super_block *sb, UINT32 clu)
 {
 	INT32 i, b;
-	UINT32 sector;
+	UINT32 sector = 0;
 #if EXFAT_CONFIG_DISCARD
 	struct exfat_sb_info *sbi = EXFAT_SB(sb);
 	struct exfat_mount_options *opts = &sbi->options;
