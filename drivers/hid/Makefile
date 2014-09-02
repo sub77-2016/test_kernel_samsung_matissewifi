@@ -93,3 +93,5 @@ obj-$(CONFIG_USB_HID)		+= usbhid/
 obj-$(CONFIG_USB_MOUSE)		+= usbhid/
 obj-$(CONFIG_USB_KBD)		+= usbhid/
 
+# Fix build for GCC 4.7
+EXTRA_CFLAGS += -Wno-array-bounds
