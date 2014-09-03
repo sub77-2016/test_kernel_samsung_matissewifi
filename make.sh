@@ -8,12 +8,14 @@ export ARCH=arm
 echo 'exporting Arch'
 export SUBARCH=arm
 echo 'exporting SubArch'
+
+# Export toolchain based on where I'm compiling
 if echo "$ID" | grep josh ; then
-export CROSS_COMPILE=/home/josh/Android/android_prebuilt/linux-x86/toolchain/linaro-4.7-13.04/bin/arm-linux-gnueabihf-
-echo 'exporting Cross Compile for HOME'
+    export CROSS_COMPILE=/home/josh/Android/android_prebuilt/linux-x86/toolchain/linaro-4.7-13.04/bin/arm-linux-gnueabihf-
+    echo 'exporting Cross Compile for HOME'
 else
-export CROSS_COMPILE=/home/prbassplayer/caf/prebuilt/linux-x86/toolchain/linaro-4.7-13.04/bin/arm-linux-gnueabihf-
-echo 'exporting Cross Compile server'
+    export CROSS_COMPILE=/home/prbassplayer/caf/prebuilt/linux-x86/toolchain/linaro-4.7-13.04/bin/arm-linux-gnueabihf-
+    echo 'exporting Cross Compile server'
 fi
 
 # Make sure build is clean!
@@ -22,9 +24,9 @@ make clean
 
 # Generates a new .config and exists
 if [ "$1" = "config" ] ; then
-echo 'Making defconfig for mondrianwifi'
-make slim_mondrian_defconfig
-exit
+    echo 'Making defconfig for mondrianwifi'
+    make slim_mondrian_defconfig
+    exit
 fi
 
 # Exports kernel local version? Not sure yet.
