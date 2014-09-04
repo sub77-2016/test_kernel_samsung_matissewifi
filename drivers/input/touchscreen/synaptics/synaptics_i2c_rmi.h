@@ -407,7 +407,10 @@
 #define REGISTER_ADDR_CHANGE_REPORT_RATE	0x012A
 #define REGISTER_ADDR_FORCE_CALIBRATION		0x0138
 
+/*
+ * Disabled for rwsem compatibality
 extern int system_rev;
+ */
 
 struct synaptics_rmi4_f01_device_status {
 	union {

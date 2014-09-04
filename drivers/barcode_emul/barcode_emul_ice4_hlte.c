@@ -91,7 +91,10 @@
 #define TIME_LIMIT_MSEC 300
 #define tm(time) (u32)ktime_to_us(time)
 
+/*
+ * Disabled for rwsem compatibality
 extern int system_rev;
+ */
 
 struct barcode_emul_data {
 	struct i2c_client		*client;
