@@ -30,6 +30,7 @@ static int devfreq_simple_ondemand_func(struct devfreq *df,
 					u32 *flag)
 {
 	struct devfreq_dev_status stat;
+	struct devfreq_simple_ondemand_data *data = df->data;
 	int err;
 	unsigned long long a, b;
 	unsigned long max = (df->max_freq) ? df->max_freq : UINT_MAX;
