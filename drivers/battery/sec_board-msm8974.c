@@ -144,8 +144,8 @@ static struct battery_data_t samsung_battery_data[] = {
 	{
 #if defined(CONFIG_MACH_PICASSO) || defined(CONFIG_MACH_LT03)
 		.Capacity = 0x3F76, /* N1/N2: 8123mAh */
-#elif defined(CONFIG_MACH_MONDRIAN)
-		.Capacity = 0x2456, /* Mondrian : 4651mAh */
+#elif defined(CONFIG_MACH_MATISSE)
+		.Capacity = 0x2456, /* Matisse : 4651mAh */
 #else
 		.Capacity = 0x4A38, /* V1/V2: 9500mAh */
 #endif

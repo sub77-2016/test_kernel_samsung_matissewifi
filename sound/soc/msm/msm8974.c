@@ -473,7 +473,7 @@ static int msm8974_liquid_init_docking(struct snd_soc_dapm_context *dapm)
 	return 0;
 }
 
-#if !defined(CONFIG_MACH_VIENNA_LTE) && !defined(CONFIG_MACH_V2_LTE) && !defined(CONFIG_MACH_LT03_LTE) && !defined(CONFIG_MACH_PICASSO_LTE) && !defined(CONFIG_MACH_MONDRIAN) && !defined(CONFIG_MACH_CHAGALL) && !defined(CONFIG_MACH_KLIMT)
+#if !defined(CONFIG_MACH_VIENNA_LTE) && !defined(CONFIG_MACH_V2_LTE) && !defined(CONFIG_MACH_LT03_LTE) && !defined(CONFIG_MACH_PICASSO_LTE) && !defined(CONFIG_MACH_MATISSE) && !defined(CONFIG_MACH_CHAGALL) && !defined(CONFIG_MACH_KLIMT)
 static int msm8974_liquid_ext_spk_power_amp_on(u32 spk)
 {
 	int rc;
@@ -628,7 +628,7 @@ static int msm8974_set_spk(struct snd_kcontrol *kcontrol,
 }
 
 
-#if !defined(CONFIG_MACH_VIENNA_LTE) && !defined(CONFIG_MACH_V2_LTE) && !defined(CONFIG_MACH_LT03_LTE) && !defined(CONFIG_MACH_PICASSO_LTE) && !defined(CONFIG_MACH_MONDRIAN) && !defined(CONFIG_MACH_CHAGALL) && !defined(CONFIG_MACH_KLIMT)
+#if !defined(CONFIG_MACH_VIENNA_LTE) && !defined(CONFIG_MACH_V2_LTE) && !defined(CONFIG_MACH_LT03_LTE) && !defined(CONFIG_MACH_PICASSO_LTE) && !defined(CONFIG_MACH_MATISSE) && !defined(CONFIG_MACH_CHAGALL) && !defined(CONFIG_MACH_KLIMT)
 static int msm_ext_spkramp_event(struct snd_soc_dapm_widget *w,
 			     struct snd_kcontrol *k, int event)
 {

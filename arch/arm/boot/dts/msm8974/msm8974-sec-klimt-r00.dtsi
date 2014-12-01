@@ -12,7 +12,7 @@
 
 /include/ "msm8974-leds.dtsi"
 /include/ "msm8974-camera-sensor-klimt-r00.dtsi"
-/include/ "msm8974-sii8240_mhl-mondrian-r00.dtsi"
+/include/ "msm8974-sii8240_mhl-matisse-r00.dtsi"
 
 / {
 	aliases {

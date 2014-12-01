@@ -1385,7 +1385,7 @@ static struct msm_gpiomux_config msm8974_pri_ter_auxpcm_configs[] __initdata = {
 	},
 };
 
-#if 0 /* Not used at Mondrian */
+#if 0 /* Not used at Matisse */
 static struct msm_gpiomux_config msm8974_sec_auxpcm_configs[] __initdata = {
 	{
 		.gpio = 79,
@@ -1960,7 +1960,7 @@ void __init msm_8974_init_gpiomux(void)
 #endif
 
 	if (of_board_is_cdp()) {
-#if 0 /* Not used at Mondrian */
+#if 0 /* Not used at Matisse */
 		msm_gpiomux_install(msm8974_sec_auxpcm_configs,
 				 ARRAY_SIZE(msm8974_sec_auxpcm_configs));
 #endif

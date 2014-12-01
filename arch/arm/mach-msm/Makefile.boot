@@ -47,20 +47,20 @@ endif
 
 # MSM8974 & 8974PRO
    zreladdr-$(CONFIG_ARCH_MSM8974)	:= 0x00008000
-ifeq ($(CONFIG_SEC_MONDRIAN_PROJECT),y)
-    ifeq ($(CONFIG_MACH_MONDRIAN_LTE),y)
-	dtb-$(CONFIG_SEC_MONDRIAN_PROJECT)	+= msm8974-sec-mondrianlte-r00.dtb
-	dtb-$(CONFIG_SEC_MONDRIAN_PROJECT)	+= msm8974-sec-mondrianlte-r07.dtb
-	dtb-$(CONFIG_SEC_MONDRIAN_PROJECT)	+= msm8974-sec-mondrianlte-r08.dtb
-	dtb-$(CONFIG_SEC_MONDRIAN_PROJECT)	+= msm8974-sec-mondrianlte-r12.dtb
-    else ifeq ($(CONFIG_MACH_MONDRIAN_WIFI),y)
-	dtb-$(CONFIG_SEC_MONDRIAN_PROJECT)	+= apq8074-sec-mondrianwifi-r00.dtb
-	dtb-$(CONFIG_SEC_MONDRIAN_PROJECT)	+= apq8074-sec-mondrianwifi-r07.dtb
-	dtb-$(CONFIG_SEC_MONDRIAN_PROJECT)	+= apq8074-sec-mondrianwifi-r08.dtb
-	dtb-$(CONFIG_SEC_MONDRIAN_PROJECT)	+= apq8074-sec-mondrianwifi-r12.dtb
-    else ifeq ($(CONFIG_MACH_MONDRIAN_3G),y)
-	dtb-$(CONFIG_SEC_MONDRIAN_PROJECT)	+= msm8974-sec-mondrian3g-r08.dtb
-	dtb-$(CONFIG_SEC_MONDRIAN_PROJECT)	+= msm8974-sec-mondrian3g-r12.dtb
+ifeq ($(CONFIG_SEC_MATISSE_PROJECT),y)
+    ifeq ($(CONFIG_MACH_MATISSE_LTE),y)
+	dtb-$(CONFIG_SEC_MATISSE_PROJECT)	+= msm8974-sec-matisselte-r00.dtb
+	dtb-$(CONFIG_SEC_MATISSE_PROJECT)	+= msm8974-sec-matisselte-r07.dtb
+	dtb-$(CONFIG_SEC_MATISSE_PROJECT)	+= msm8974-sec-matisselte-r08.dtb
+	dtb-$(CONFIG_SEC_MATISSE_PROJECT)	+= msm8974-sec-matisselte-r12.dtb
+    else ifeq ($(CONFIG_MACH_MATISSE_WIFI),y)
+	dtb-$(CONFIG_SEC_MATISSE_PROJECT)	+= apq8074-sec-matissewifi-r00.dtb
+	dtb-$(CONFIG_SEC_MATISSE_PROJECT)	+= apq8074-sec-matissewifi-r07.dtb
+	dtb-$(CONFIG_SEC_MATISSE_PROJECT)	+= apq8074-sec-matissewifi-r08.dtb
+	dtb-$(CONFIG_SEC_MATISSE_PROJECT)	+= apq8074-sec-matissewifi-r12.dtb
+    else ifeq ($(CONFIG_MACH_MATISSE_3G),y)
+	dtb-$(CONFIG_SEC_MATISSE_PROJECT)	+= msm8974-sec-matisse3g-r08.dtb
+	dtb-$(CONFIG_SEC_MATISSE_PROJECT)	+= msm8974-sec-matisse3g-r12.dtb
     endif
 endif
 	dtb-$(CONFIG_SEC_VIENNA_PROJECT)	+= msm8974-sec-viennalte-r00.dtb

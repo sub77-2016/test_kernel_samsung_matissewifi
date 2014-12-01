@@ -456,7 +456,7 @@ int mdss_dsi_panel_init(struct device_node *node,
 void mdss_dsi_mdp_busy_wait(int panel_ndx);
 void mdss_dsi_dump_power_clk(struct mdss_panel_data *pdata, int flag);
 
-/*for mondrian*/
+/*for matisse*/
 void pwm_backlight_enable(void);
 void pwm_backlight_disable(void);
 

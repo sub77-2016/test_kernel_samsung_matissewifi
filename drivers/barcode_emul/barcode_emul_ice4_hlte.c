@@ -301,7 +301,7 @@ static int barcode_parse_dt(struct device *dev,
 				0, &pdata->spi_si_flag);
 	pdata->irda_irq =of_get_named_gpio_flags(np, "barcode,irq-gpio",
 				0, &pdata->irda_irq_flag);
-#if defined(CONFIG_MACH_MONDRIAN)
+#if defined(CONFIG_MACH_MATISSE)
 	pdata->ir_led_en = of_get_named_gpio_flags(np, "barcode,ir_led_en",
 				0, &pdata->ir_led_en_flag);
 #endif
@@ -338,7 +338,7 @@ static void barcode_gpio_config(void)
 	gpio_request(g_pdata->irda_irq, "irda_irq");
 	gpio_direction_input(g_pdata->irda_irq);
 
-#if defined(CONFIG_MACH_MONDRIAN)
+#if defined(CONFIG_MACH_MATISSE)
 	gpio_request(g_pdata->ir_led_en, "ir_led_en");
 	gpio_direction_output(g_pdata->ir_led_en, 0);
 #endif
@@ -467,8 +467,8 @@ void ice4_fpga_firmware_update_hlte(void)
 	gpio_tlmm_config(GPIO_CFG(g_pdata->spi_clk, 0,
 		GPIO_CFG_INPUT, GPIO_CFG_NO_PULL, GPIO_CFG_4MA), 1);
 #else
-#if defined(CONFIG_MACH_MONDRIAN)
-	pr_info("%s : mondrian\n", __func__);
+#if defined(CONFIG_MACH_MATISSE)
+	pr_info("%s : matisse\n", __func__);
 	gpio_tlmm_config(GPIO_CFG(g_pdata->spi_si, 0,
 		GPIO_CFG_OUTPUT, GPIO_CFG_PULL_UP, GPIO_CFG_2MA), 1);
 	gpio_tlmm_config(GPIO_CFG(g_pdata->spi_clk, 0,
@@ -866,7 +866,7 @@ static void ir_remocon_work(struct barcode_emul_data *ir_data, int count)
 
 	pr_barcode("%s: total buf_size: %d\n", __func__, buf_size);
 
-#if defined(CONFIG_MACH_MONDRIAN)
+#if defined(CONFIG_MACH_MATISSE)
 	gpio_set_value(g_pdata->ir_led_en, GPIO_LEVEL_HIGH);
 #endif
 	bc_poweron(1);
@@ -981,7 +981,7 @@ static void ir_remocon_work(struct barcode_emul_data *ir_data, int count)
 	data->ir_sum = 0;
 
 	fpga_enable(0,0);
-#if defined(CONFIG_MACH_MONDRIAN)
+#if defined(CONFIG_MACH_MATISSE)
 	gpio_set_value(g_pdata->ir_led_en, GPIO_LEVEL_LOW);
 #endif
 	bc_poweron(0);
@@ -1152,7 +1152,7 @@ static ssize_t irda_test_store(struct device *dev,
 	for (i = 0; i < IRDA_TEST_CODE_SIZE; i++)
 		i2c_block_transfer.data[i] = BSR_data[i];
 
-#if defined(CONFIG_MACH_MONDRIAN)
+#if defined(CONFIG_MACH_MATISSE)
 	gpio_set_value(g_pdata->ir_led_en, GPIO_LEVEL_HIGH);
 #endif
 	bc_poweron(1);
@@ -1170,7 +1170,7 @@ static ssize_t irda_test_store(struct device *dev,
 			pr_err("%s: err2 %d\n", __func__, ret);
 	}
 
-#if defined(CONFIG_MACH_MONDRIAN)
+#if defined(CONFIG_MACH_MATISSE)
 	gpio_set_value(g_pdata->ir_led_en, GPIO_LEVEL_LOW);
 #endif
 	bc_poweron(0);

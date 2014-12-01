@@ -59,7 +59,7 @@
 #undef TSP_BOOSTER /* Temporarily diabling TOUCH BOOSTER for Hestia */
 #endif
 
-#if defined(CONFIG_SEC_MONDRIAN_PROJECT)
+#if defined(CONFIG_SEC_MATISSE_PROJECT)
 #define TOUCHKEY_ENABLE
 #define USE_RECENT_TOUCHKEY
 #define PROXIMITY
@@ -410,7 +410,7 @@
 
 #ifdef EDGE_SWIPE
 
-#if defined(CONFIG_SEC_MONDRIAN_PROJECT) || defined(CONFIG_SEC_CHAGALL_PROJECT)
+#if defined(CONFIG_SEC_MATISSE_PROJECT) || defined(CONFIG_SEC_CHAGALL_PROJECT)
 #define EDGE_SWIPE_DATA_OFFSET	3
 #else
 #define EDGE_SWIPE_DATA_OFFSET	9

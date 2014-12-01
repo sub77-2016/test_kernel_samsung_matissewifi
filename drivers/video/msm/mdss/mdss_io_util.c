@@ -208,7 +208,7 @@ int msm_dss_enable_vreg(struct dss_vreg *in_vreg, int num_vreg, int enable)
 	int i = 0, rc = 0;
 	if (enable) {
 		for (i = 0; i < num_vreg; i++) {
-#if defined(CONFIG_MACH_MONDRIAN) || defined(CONFIG_MACH_CHAGALL)
+#if defined(CONFIG_MACH_MATISSE) || defined(CONFIG_MACH_CHAGALL)
 			if(!strncmp(in_vreg[i].vreg_name, "vdd", 4)) {
 				pr_info("%s : VDD enable skip!!\n", __func__);
 				continue;
@@ -255,7 +255,7 @@ int msm_dss_enable_vreg(struct dss_vreg *in_vreg, int num_vreg, int enable)
 	} else {
 		for (i = num_vreg-1; i >= 0; i--)
 			if (regulator_is_enabled(in_vreg[i].vreg)) {
-#if defined(CONFIG_MACH_MONDRIAN) || defined(CONFIG_MACH_CHAGALL)
+#if defined(CONFIG_MACH_MATISSE) || defined(CONFIG_MACH_CHAGALL)
 				if(!strncmp(in_vreg[i].vreg_name, "vdd", 4)) {
 					pr_info("%s : VDD disable skip!!\n", __func__);
 					continue;

@@ -1427,7 +1427,7 @@ static void dwc3_msm_ss_phy_reg_init(struct dwc3_msm *mdwc)
 	data &= ~(1 << 6);
 	data |= (1 << 7);
 	data &= ~(0x7 << 8);
-#if defined(CONFIG_SEC_MONDRIAN_PROJECT)
+#if defined(CONFIG_SEC_MATISSE_PROJECT)
 	data |= (0x5 << 8);
 #else
 	/* HLTE, Vienna customized value */

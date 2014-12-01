@@ -457,7 +457,7 @@ static void init_session_id(void)
 
 static int voice_apr_register(void)
 {
-#if !defined(CONFIG_MACH_MONDRIAN_WIFI) && !defined(CONFIG_SEC_MILLETWIFI_COMMON) && !defined(CONFIG_SEC_MATISSEWIFI_COMMON)
+#if !defined(CONFIG_MACH_MATISSE_WIFI) && !defined(CONFIG_SEC_MILLETWIFI_COMMON) && !defined(CONFIG_SEC_MATISSEWIFI_COMMON)
 	void *modem_mvm, *modem_cvs, *modem_cvp;
 #endif
 	pr_debug("%s\n", __func__);
@@ -476,7 +476,7 @@ static int voice_apr_register(void)
 			pr_err("%s: Unable to register MVM\n", __func__);
 			goto err;
 		}
-#if !defined(CONFIG_MACH_MONDRIAN_WIFI) && !defined(CONFIG_SEC_MILLETWIFI_COMMON) && !defined(CONFIG_SEC_MATISSEWIFI_COMMON)
+#if !defined(CONFIG_MACH_MATISSE_WIFI) && !defined(CONFIG_SEC_MILLETWIFI_COMMON) && !defined(CONFIG_SEC_MATISSEWIFI_COMMON)
 		/*
 		 * Register with modem for SSR callback. The APR handle
 		 * is not stored since it is used only to receive notifications
@@ -503,7 +503,7 @@ static int voice_apr_register(void)
 			goto err;
 		}
 		rtac_set_voice_handle(RTAC_CVS, common.apr_q6_cvs);
-#if !defined(CONFIG_MACH_MONDRIAN_WIFI) && !defined(CONFIG_SEC_MILLETWIFI_COMMON) && !defined(CONFIG_SEC_MATISSEWIFI_COMMON)
+#if !defined(CONFIG_MACH_MATISSE_WIFI) && !defined(CONFIG_SEC_MILLETWIFI_COMMON) && !defined(CONFIG_SEC_MATISSEWIFI_COMMON)
 		/*
 		 * Register with modem for SSR callback. The APR handle
 		 * is not stored since it is used only to receive notifications
@@ -531,7 +531,7 @@ static int voice_apr_register(void)
 		}
 		rtac_set_voice_handle(RTAC_CVP, common.apr_q6_cvp);
 
-#if !defined(CONFIG_MACH_MONDRIAN_WIFI) && !defined(CONFIG_SEC_MILLETWIFI_COMMON) && !defined(CONFIG_SEC_MATISSEWIFI_COMMON)
+#if !defined(CONFIG_MACH_MATISSE_WIFI) && !defined(CONFIG_SEC_MILLETWIFI_COMMON) && !defined(CONFIG_SEC_MATISSEWIFI_COMMON)
 		/*
 		 * Register with modem for SSR callback. The APR handle
 		 * is not stored since it is used only to receive notifications

@@ -12,8 +12,8 @@
  *
  */
 
-#ifndef __MACH_MSM8974_BOARD_MONDRIAN_H
-#define __MACH_MSM8974_BOARD_MONDRIAN_H
+#ifndef __MACH_MSM8974_BOARD_MATISSE_H
+#define __MACH_MSM8974_BOARD_MATISSE_H
 
 #include <mach/irqs.h>
 #include <linux/i2c.h>

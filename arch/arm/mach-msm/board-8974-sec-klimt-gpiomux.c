@@ -95,7 +95,7 @@ static struct msm_gpiomux_config gpio_nc_configs[] __initdata = {
 	GPIOMUX_SET_NC(131),
 	GPIOMUX_SET_NC(136),
 	GPIOMUX_SET_NC(137),
-#if defined(CONFIG_MACH_MONDRIAN_WIFI)
+#if defined(CONFIG_MACH_MATISSE_WIFI)
 	GPIOMUX_SET_NC(104),
 	GPIOMUX_SET_NC(105),
 	GPIOMUX_SET_NC(107),
@@ -111,7 +111,7 @@ static struct msm_gpiomux_config gpio_nc_configs[] __initdata = {
 	GPIOMUX_SET_NC(134),
 	GPIOMUX_SET_NC(138),
 	GPIOMUX_SET_NC(139),
-#endif /* CONFIG_MACH_MONDRIAN_WIFI */
+#endif /* CONFIG_MACH_MATISSE_WIFI */
 
 };
 
@@ -1354,7 +1354,7 @@ static struct msm_gpiomux_config msm8974_pri_ter_auxpcm_configs[] __initdata = {
 	},
 };
 
-#if 0 /* Not used at Mondrian */
+#if 0 /* Not used at Matisse */
 static struct msm_gpiomux_config msm8974_sec_auxpcm_configs[] __initdata = {
 	{
 		.gpio = 79,
@@ -1829,7 +1829,7 @@ void __init msm_8974_init_gpiomux(void)
 				 ARRAY_SIZE(msm8974_pri_pri_auxpcm_configs));
 
 	if (of_board_is_cdp()) {
-#if 0 /* Not used at Mondrian */
+#if 0 /* Not used at Matisse */
 		msm_gpiomux_install(msm8974_sec_auxpcm_configs,
 				 ARRAY_SIZE(msm8974_sec_auxpcm_configs));
 #endif

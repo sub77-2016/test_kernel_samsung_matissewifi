@@ -39,7 +39,7 @@
 
 #include "mdss_dsi.h"
 #include "cabc_tuning.h"
-#include "cabc_tuning_data_mondrian.h"
+#include "cabc_tuning_data_matisse.h"
 
 static char cabc_tune_data1[CABC_TUNE_FIRST_SIZE] = {0,};
 static char cabc_tune_data2[CABC_TUNE_SECOND_SIZE] = {0,};

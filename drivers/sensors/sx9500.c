@@ -52,7 +52,7 @@
 #define SX9500_MODE_SLEEP        0
 #define SX9500_MODE_NORMAL       1
 
-#ifdef CONFIG_MACH_MONDRIAN
+#ifdef CONFIG_MACH_MATISSE
 #define MAIN_SENSOR              3
 #define REF_SENSOR               2
 #define CSX_STATUS_REG           SX9500_TCHCMPSTAT_TCHSTAT3_FLAG

@@ -1970,55 +1970,55 @@ config MACH_PATEKLTE_CTC
         help
           Support for Samsung KLTE_EUR device.
 
-config SEC_MONDRIAN_PROJECT
+config SEC_MATISSE_PROJECT
 	default n
-	bool "Samsung MONDRIAN project"
+	bool "Samsung MATISSE project"
 	help
-	  Support for Samsung MONDRIAN project.
+	  Support for Samsung MATISSE project.
 
-config MACH_MONDRIAN
+config MACH_MATISSE
 	default n
-	bool "Samsung model MONDRIAN"
-	select SEC_MONDRIAN_PROJECT
+	bool "Samsung model MATISSE"
+	select SEC_MATISSE_PROJECT
 	select MUIC_RESET_PIN_ENABLE
 	help
-	  Support for Samsung MONDRIAN device.
+	  Support for Samsung MATISSE device.
 
-config MACH_MONDRIAN_LTE
+config MACH_MATISSE_LTE
 	default n
-	bool "Samsung model MONDRIAN_LTE"
+	bool "Samsung model MATISSE_LTE"
 	help
-	  Support for Samsung MONDRIAN_LTE device.
+	  Support for Samsung MATISSE_LTE device.
 	  
-config MACH_MONDRIANATT
+config MACH_MATISSEATT
 	default n
-	bool "Samsung model MONDRIANATT"
+	bool "Samsung model MATISSEATT"
 	help
-	  Support for Samsung MONDRIANATT device.	  
+	  Support for Samsung MATISSEATT device.	  
 
-config MACH_MONDRIAN_WIFI
+config MACH_MATISSE_WIFI
 	default n
-	bool "Samsung model MONDRIAN_WIFI"
+	bool "Samsung model MATISSE_WIFI"
 	help
-	  Support for Samsung MONDRIAN_WIFI device.
+	  Support for Samsung MATISSE_WIFI device.
 
-config MACH_MONDRIANWIFI_USA
+config MACH_MATISSEWIFI_USA
 	default n
-	bool "Samsung model MONDRIANWIFI_USA"
+	bool "Samsung model MATISSEWIFI_USA"
 	help
-	  Support for Samsung MONDRIANWIFI_USA device.
+	  Support for Samsung MATISSEWIFI_USA device.
 
-config MACH_MONDRIANWIFI_EUR
+config MACH_MATISSEWIFI_EUR
 	default n
-	bool "Samsung model MONDRIANWIFI_EUR"
+	bool "Samsung model MATISSEWIFI_EUR"
 	help
-	  Support for Samsung MONDRIANWIFI_EUR device.
+	  Support for Samsung MATISSEWIFI_EUR device.
 
-config MACH_MONDRIAN_3G
+config MACH_MATISSE_3G
 	default n
-	bool "Samsung model MONDRIAN3G_EUR"
+	bool "Samsung model MATISSE3G_EUR"
 	help
-	  Support for Samsung MONDRIAN3G_EUR device.
+	  Support for Samsung MATISSE3G_EUR device.
 
 config SEC_VIENNA_PROJECT
 	default n
