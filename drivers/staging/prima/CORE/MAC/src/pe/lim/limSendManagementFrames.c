@@ -5085,16 +5085,7 @@ tSirRetStatus limSendAddBARsp( tpAniSirGlobal pMac,
       frmAddBARsp.AddBAParameterSet.tid = pMlmAddBARsp->baTID;
       frmAddBARsp.AddBAParameterSet.policy = pMlmAddBARsp->baPolicy;
       frmAddBARsp.AddBAParameterSet.bufferSize = pMlmAddBARsp->baBufferSize;
-
-      if(psessionEntry->isAmsduSupportInAMPDU)
-      {
-         frmAddBARsp.AddBAParameterSet.amsduSupported =
-                                          psessionEntry->amsduSupportedInBA;
-      }
-      else
-      {
-         frmAddBARsp.AddBAParameterSet.amsduSupported = 0;
-      }
+      frmAddBARsp.AddBAParameterSet.amsduSupported = psessionEntry->amsduSupportedInBA;
 
       // BA timeout
       // 0 - indicates no BA timeout

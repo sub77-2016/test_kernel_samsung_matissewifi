@@ -451,14 +451,6 @@ typedef enum
 #ifdef FEATURE_WLAN_LFR
     eCSR_ROAM_PMK_NOTIFY,
 #endif
-//Begin fjdw67 Motorola, IKJB42MAIN-6385 - LFR roaming instrumentation
-#ifdef FEATURE_WLAN_LFR_METRICS
-    eCSR_ROAM_PREAUTH_INIT_NOTIFY,
-    eCSR_ROAM_PREAUTH_STATUS_SUCCESS,
-    eCSR_ROAM_PREAUTH_STATUS_FAILURE,
-    eCSR_ROAM_HANDOVER_SUCCESS,
-#endif
-//End fjdw67 Motorola
 #ifdef FEATURE_WLAN_TDLS
     eCSR_ROAM_TDLS_STATUS_UPDATE,
     eCSR_ROAM_RESULT_MGMT_TX_COMPLETE_IND,
@@ -1114,9 +1106,6 @@ typedef struct tagCsrConfigParam
     tANI_U8   enableTxLdpc;
 
     tANI_BOOLEAN  enableOxygenNwk;
-
-    tANI_U8 isAmsduSupportInAMPDU;
-
 }tCsrConfigParam;
 
 //Tush

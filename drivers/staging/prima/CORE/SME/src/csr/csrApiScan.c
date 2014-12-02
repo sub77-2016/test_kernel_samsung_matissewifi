@@ -840,8 +840,7 @@ eHalStatus csrScanRequest(tpAniSirGlobal pMac, tANI_U16 sessionId,
                         }
                         pChnInfo->numOfChannels = (tANI_U8)numChn;
                         p11dScanCmd->command = eSmeCommandScan;
-                        //p11dScanCmd->u.scanCmd.callback = NULL;
-                        p11dScanCmd->u.scanCmd.callback = pMac->scan.callback11dScanDone;
+                        p11dScanCmd->u.scanCmd.callback = NULL;
                         p11dScanCmd->u.scanCmd.pContext = NULL;
                         p11dScanCmd->u.scanCmd.scanID = pMac->scan.nextScanID++;                
                         scanReq.BSSType = eCSR_BSS_TYPE_ANY;
@@ -2947,7 +2946,7 @@ static void csrMoveTempScanResultsToMainList( tpAniSirGlobal pMac, tANI_U8 reaso
                     cand_Bss_rssi = pBssDescription->Result.BssDescriptor.rssi;
                     // learn country information
                     csrLearnCountryInformation( pMac, &pBssDescription->Result.BssDescriptor, 
-                             pIesLocal, eANI_BOOLEAN_TRUE );
+                             pIesLocal, eANI_BOOLEAN_FALSE );
                 }
 
             }

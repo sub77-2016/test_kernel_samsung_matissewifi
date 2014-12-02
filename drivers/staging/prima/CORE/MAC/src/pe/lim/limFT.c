@@ -547,11 +547,11 @@ tSirRetStatus limFTPrepareAddBssReq( tpAniSirGlobal pMac,
 
         //Update the rates
 #ifdef WLAN_FEATURE_11AC
-        limPopulatePeerRateSet(pMac, &pAddBssParams->staContext.supportedRates,
+        limPopulateOwnRateSet(pMac, &pAddBssParams->staContext.supportedRates,
                              pBeaconStruct->HTCaps.supportedMCSSet,
                              false,pftSessionEntry,&pBeaconStruct->VHTCaps);
 #else
-        limPopulatePeerRateSet(pMac, &pAddBssParams->staContext.supportedRates,
+        limPopulateOwnRateSet(pMac, &pAddBssParams->staContext.supportedRates,
                                                     beaconStruct.HTCaps.supportedMCSSet, false,pftSessionEntry);
 #endif
         limFillSupportedRatesInfo(pMac, NULL, &pAddBssParams->staContext.supportedRates,pftSessionEntry);

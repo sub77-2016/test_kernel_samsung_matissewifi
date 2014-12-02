@@ -2391,20 +2391,6 @@ REG_VARIABLE( CFG_TDLS_PUAPSD_RX_FRAME_THRESHOLD, WLAN_PARAM_Integer,
                  CFG_ENABLE_SNR_MONITORING_MIN,
                  CFG_ENABLE_SNR_MONITORING_MAX),
 
-   REG_VARIABLE( CFG_AMSDU_SUPPORT_IN_AMPDU_NAME , WLAN_PARAM_Integer,
-                 hdd_config_t, isAmsduSupportInAMPDU,
-                 VAR_FLAGS_OPTIONAL | VAR_FLAGS_RANGE_CHECK_ASSUME_DEFAULT,
-                 CFG_AMSDU_SUPPORT_IN_AMPDU_DEFAULT,
-                 CFG_AMSDU_SUPPORT_IN_AMPDU_MIN,
-                 CFG_AMSDU_SUPPORT_IN_AMPDU_MAX ),
-
-   REG_VARIABLE( CFG_ADVERTISE_CONCURRENT_OPERATION_NAME , WLAN_PARAM_Integer,
-                 hdd_config_t, advertiseConcurrentOperation,
-                 VAR_FLAGS_OPTIONAL,
-                 CFG_ADVERTISE_CONCURRENT_OPERATION_DEFAULT,
-                 CFG_ADVERTISE_CONCURRENT_OPERATION_MIN,
-                 CFG_ADVERTISE_CONCURRENT_OPERATION_MAX ),
-
 };
 
 /*
@@ -2789,8 +2775,6 @@ static void print_hdd_cfg(hdd_context_t *pHddCtx)
   VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO_HIGH, "Name = [gFlexConnectPowerFactor] Value = [%u] ", pHddCtx->cfg_ini->flexConnectPowerFactor);
   VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO_HIGH, "Name = [gEnableIbssHeartBeatOffload] Value = [%u] ", pHddCtx->cfg_ini->enableIbssHeartBeatOffload);
   VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO_HIGH, "Name = [gAntennaDiversity] Value = [%u] ", pHddCtx->cfg_ini->antennaDiversity);
-  VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO_HIGH, "Name = [gAmsduSupportInAMPDU] Value = [%lu] ",pHddCtx->cfg_ini->isAmsduSupportInAMPDU);
-
 }
 
 
@@ -2858,7 +2842,7 @@ VOS_STATUS hdd_cfg_get_config(hdd_context_t *pHddCtx, char *pBuf, int buflen)
       {
          snprintf(valueStr, CFG_VALUE_MAX_LEN, "(unhandled)");
       }
-      curlen = scnprintf(configStr, CFG_ENTRY_MAX_LEN,
+      curlen = snprintf(configStr, CFG_ENTRY_MAX_LEN,
                         "%s=[%s]%s\n",
                         pRegEntry->RegName,
                         valueStr,
@@ -4156,8 +4140,6 @@ VOS_STATUS hdd_set_sme_config( hdd_context_t *pHddCtx )
 
    // Prop IE enabling/disabling option
    smeConfig.csrConfig.enableOxygenNwk = pConfig->enableOxygenNwk;
-
-   smeConfig.csrConfig.isAmsduSupportInAMPDU = pConfig->isAmsduSupportInAMPDU;
 
    /* update SSR config */
    sme_UpdateEnableSSR((tHalHandle)(pHddCtx->hHal), pHddCtx->cfg_ini->enableSSR);
