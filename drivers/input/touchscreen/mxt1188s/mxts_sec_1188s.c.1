@@ -2816,7 +2816,7 @@ void mxt_init_dvfs(struct mxt_data *data)
 	data->dvfs_lock_status = false;
 }
 #endif
-#endif
+
 #if MXT_TKEY_BOOSTER
 static void mxt_tkey_change_dvfs_lock(struct work_struct *work)
 {
@@ -2905,4 +2905,5 @@ void mxt_tkey_init_dvfs(struct mxt_data *data)
 
 	data->tkey_dvfs_lock_status = true;
 }
+#endif
 #endif
